@@ -18,7 +18,7 @@ const Header = () => {
       }}
     >
       <IconButton onClick={stubHandler}>
-        <SvgIcon fontSize="large" component={Logo} inheritViewBox></SvgIcon>
+        <SvgIcon fontSize="large" component={Logo} inheritViewBox />
       </IconButton>
       <Box
         sx={{

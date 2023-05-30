@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Button,
@@ -11,7 +12,7 @@ import {
 import { files } from "dropbox";
 import { useNavigate } from "react-router-dom";
 import FolderIcon from "@mui/icons-material/Folder";
-import React from "react";
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 const ContentArea = ({ data }: { data: files.ListFolderResult }) => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const ContentArea = ({ data }: { data: files.ListFolderResult }) => {
     e.stopPropagation();
     console.log("Not implemented");
   };
+
   return (
     <Box>
       <TableContainer>
@@ -42,13 +44,19 @@ const ContentArea = ({ data }: { data: files.ListFolderResult }) => {
                   },
                 }}
                 onClick={() => {
-                  navigate(row.path_lower || "");
+                  if (row[".tag"] === "folder") {
+                    navigate(row.path_lower || "");
+                  }
                 }}
                 key={row.name}
               >
                 <TableCell sx={{ width: "25%" }}>
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <FolderIcon />
+                    {row[".tag"] === "folder" ? (
+                      <FolderIcon />
+                    ) : (
+                      <InsertDriveFileIcon />
+                    )}
                     {row.name}
                   </Box>
                 </TableCell>
