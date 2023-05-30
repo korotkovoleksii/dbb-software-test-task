@@ -12,8 +12,6 @@ Please fully document your solution and ensure that it will build easily on the 
 
 You can visit https://www.dropbox.com/home to look for an example.
 
-This project implements a Kanban board that displays issues from a GitHub repository.
-
 ## Installation and Usage
 
 1. Clone the repository.
