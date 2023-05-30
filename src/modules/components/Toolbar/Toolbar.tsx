@@ -1,6 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 
 const Toolbar = ({ pathLower }: { pathLower: string }) => {
+  const stubHandler = () => {
+    console.log("Not implemented");
+  };
+
   return (
     <Box
       sx={{
@@ -18,10 +22,10 @@ const Toolbar = ({ pathLower }: { pathLower: string }) => {
           gap: "10px",
         }}
       >
-        <Button variant="contained" size="small">
+        <Button variant="contained" size="small" onClick={stubHandler}>
           Copy to DropBox
         </Button>
-        <Button variant="contained" size="small">
+        <Button variant="contained" size="small" onClick={stubHandler}>
           Download
         </Button>
       </Box>

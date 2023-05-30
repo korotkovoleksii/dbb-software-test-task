@@ -15,6 +15,7 @@ import React from "react";
 
 const ContentArea = ({ data }: { data: files.ListFolderResult }) => {
   const navigate = useNavigate();
+
   const stubHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     console.log("Not implemented");
